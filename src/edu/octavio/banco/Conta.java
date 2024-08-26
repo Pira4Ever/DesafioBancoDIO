@@ -1,14 +1,16 @@
 package edu.octavio.banco;
 
+import lombok.Getter;
+
 import java.util.Objects;
 
 public abstract class Conta implements IConta, Comparable<Conta>{
     private static final int AGENCIA_PADRAO = 1;
     private static int SEQUENCIAL = 1;
     protected int agencia;
-    protected int numero;
-    protected double saldo;
-    private final Cliente cliente;
+    @Getter protected int numero;
+    @Getter protected double saldo;
+    @Getter private final Cliente cliente;
 
     @Override
     public void sacar(double valor) {
@@ -30,22 +32,6 @@ public abstract class Conta implements IConta, Comparable<Conta>{
         agencia = AGENCIA_PADRAO;
         numero = SEQUENCIAL++;
         this.cliente = cliente;
-    }
-
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public double getSaldo() {
-        return saldo;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
     }
 
     protected void imprimirInfosComuns() {

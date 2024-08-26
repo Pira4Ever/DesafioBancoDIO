@@ -1,8 +1,13 @@
 package edu.octavio.banco;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
+@Getter
 public class Cliente implements Comparable<Cliente> {
+    @Setter
     private String nome;
     private final long cpf;
     private final LocalDate nascimento;
@@ -13,22 +18,6 @@ public class Cliente implements Comparable<Cliente> {
         this.nome = nome;
         this.cpf = cpf;
         this.nascimento = nascimento;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public long getCpf() {
-        return cpf;
-    }
-
-    public LocalDate getNascimento() {
-        return nascimento;
     }
 
     private boolean validarCPF(long cpf) {

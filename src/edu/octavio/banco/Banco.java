@@ -1,27 +1,20 @@
 package edu.octavio.banco;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+@Getter
 public class Banco {
+    @Setter
     private String nome;
     private final List<Conta> contas;
 
     public Banco() {
         contas = new ArrayList<>();
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public List<Conta> getContas() {
-        return contas;
     }
 
     public void addConta(Conta conta) {
